@@ -33,7 +33,7 @@ body {
   border-radius:20px; padding:4px 12px; font-size:11px; color:var(--gold);
 }
 .section-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
-
+ 
 /* FREQ */
 .freq-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:16px; }
 @media(min-width:560px){ .freq-grid { grid-template-columns:repeat(4,1fr); } }
@@ -58,7 +58,7 @@ body {
 .freq-card[data-freq="6"]  .freq-hz { color:#69f0ae; }
 .freq-label { font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:3px; opacity:.8; }
 .freq-desc  { font-size:9px; color:var(--muted); line-height:1.4; }
-
+ 
 /* AMBIENT */
 .ambient-panel { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:14px 16px; margin-bottom:16px; }
 .ambient-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
@@ -75,7 +75,7 @@ body {
 input[type=range] { -webkit-appearance:none; height:4px; border-radius:2px; background:rgba(255,255,255,0.1); outline:none; cursor:pointer; }
 input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; height:13px; border-radius:50%; background:var(--accent); cursor:pointer; }
 #ambVolSlider { width:70px; }
-
+ 
 /* SELECTORS */
 .selectors-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
 @media(max-width:500px){ .selectors-row { grid-template-columns:1fr; } }
@@ -88,7 +88,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .axis-btn:hover,.state-btn:hover { border-color:var(--accent); background:rgba(124,77,255,.08); }
 .axis-btn.active { background:rgba(124,77,255,.15); border-color:var(--accent); color:#c4b5fd; font-weight:600; }
 .state-btn.active { background:rgba(0,229,255,.1); border-color:var(--accent2); color:#80deea; font-weight:600; }
-
+ 
 /* PLAYER */
 .player-section { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:18px; margin-bottom:16px; }
 #waveCanvas { width:100%; height:76px; border-radius:10px; background:rgba(0,0,0,0.3); display:block; margin-bottom:12px; }
@@ -127,7 +127,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .slider-group label { font-size:9.5px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
 .slider-val { color:var(--accent2); font-weight:600; }
 #volSlider,#carrierSlider { width:100%; }
-
+ 
 /* VOZ */
 .voz-panel { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:16px; margin-bottom:16px; }
 .voz-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:8px; }
@@ -160,7 +160,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .status-dot.speaking { background:#69f0ae; box-shadow:0 0 7px rgba(105,240,174,.7); animation:pulse 1.1s infinite; }
 .status-dot.waiting  { background:var(--gold); box-shadow:0 0 7px rgba(255,215,64,.5); animation:pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
-
+ 
 /* AFIRMACIONES */
 .aff-panel { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:18px; margin-bottom:16px; min-height:170px; }
 .aff-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
@@ -174,7 +174,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .aff-nav { display:flex; gap:7px; justify-content:center; margin-top:10px; }
 .aff-nav-btn { background:var(--surface); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:14px; padding:5px 13px; cursor:pointer; font-family:inherit; transition:all .15s; }
 .aff-nav-btn:hover { border-color:var(--accent); }
-
+ 
 /* NOTION CONFIG */
 .notion-panel { background:var(--card); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-bottom:16px; }
 .notion-header {
@@ -204,7 +204,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .notion-save-btn:hover { background:rgba(124,77,255,.25); }
 .notion-help { font-size:11px; color:var(--muted); line-height:1.6; margin-top:10px; padding:10px; background:rgba(255,255,255,.03); border-radius:8px; }
 .notion-help a { color:var(--accent2); text-decoration:none; }
-
+ 
 /* MODAL FIN DE SESIÓN */
 .modal-overlay {
   position:fixed; inset:0; background:rgba(0,0,0,.85);
@@ -258,19 +258,19 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .notion-result { font-size:12px; text-align:center; padding:8px; border-radius:8px; margin-top:6px; display:none; }
 .notion-result.ok  { background:rgba(105,240,174,.1); color:#69f0ae; display:block; }
 .notion-result.err { background:rgba(244,67,54,.1); color:#ef9a9a; display:block; }
-
+ 
 .footer { text-align:center; font-size:10px; color:var(--muted); opacity:.4; margin-top:16px; }
 </style>
 </head>
 <body>
-
+ 
 <div class="header">
   <div class="os-label">Said OS — Q2 2026</div>
   <h1>Motor de Reprogramación Mental</h1>
   <div class="date-line" id="dateDisplay"></div>
   <div class="headphones-note">🎧 Audífonos obligatorios — binaural + sonido + voz</div>
 </div>
-
+ 
 <!-- FRECUENCIAS -->
 <div class="section-label">Frecuencia Binaural</div>
 <div class="freq-grid">
@@ -291,7 +291,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     <div class="freq-desc">Pineal · Visión profunda</div>
   </div>
 </div>
-
+ 
 <!-- SONIDO AMBIENTAL -->
 <div class="ambient-panel">
   <div class="section-label" style="margin-bottom:10px">Sonido Ambiental de Fondo</div>
@@ -306,7 +306,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     </div>
   </div>
 </div>
-
+ 
 <!-- SELECTORS -->
 <div class="selectors-row">
   <div>
@@ -329,7 +329,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     </div>
   </div>
 </div>
-
+ 
 <!-- PLAYER -->
 <div class="player-section">
   <canvas id="waveCanvas"></canvas>
@@ -360,7 +360,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     </div>
   </div>
 </div>
-
+ 
 <!-- VOZ -->
 <div class="voz-panel">
   <div class="voz-header">
@@ -394,7 +394,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     <span id="statusText">Listo — presiona Play para comenzar</span>
   </div>
 </div>
-
+ 
 <!-- AFIRMACIONES -->
 <div class="aff-panel">
   <div class="aff-header">
@@ -409,7 +409,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     <button class="aff-nav-btn" onclick="nextAff()">›</button>
   </div>
 </div>
-
+ 
 <!-- NOTION CONFIG -->
 <div class="notion-panel">
   <div class="notion-header" onclick="toggleNotion()">
@@ -425,7 +425,8 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
       <label>ID de la Base de Datos de Notion</label>
       <input class="notion-input" id="notionDb" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" oninput="saveNotionConfig()">
     </div>
-    <button class="notion-save-btn" onclick="testNotion()">🔗 Probar conexión</button>
+    <button class="notion-save-btn" onclick="probarRegistro()" style="margin-bottom:8px">🧪 Probar registro en Notion</button>
+    <button class="notion-save-btn" onclick="testNotion()" style="background:rgba(124,77,255,0.08);color:var(--muted);border-color:var(--border)">🔗 Probar conexión (legacy)</button>
     <div id="notionTestResult" class="notion-result"></div>
     <div class="notion-help">
       <strong style="color:var(--text)">Cómo configurarlo:</strong><br>
@@ -438,7 +439,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     </div>
   </div>
 </div>
-
+ 
 <!-- MODAL FIN DE SESIÓN -->
 <div class="modal-overlay" id="sessionModal">
   <div class="modal-card">
@@ -455,9 +456,9 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
     </div>
   </div>
 </div>
-
+ 
 <div class="footer">Said OS · Q2 2026 · Diseñado para ojos cerrados</div>
-
+ 
 <script>
 // ══════════════════════════════════════════════
 // ESTADO GLOBAL
@@ -470,13 +471,13 @@ let timeLeft      = 600, totalTime    = 600;
 let vozActiva     = true, intervaloSeg = 40;
 let velocidadVoz  = 0.78, pitchVoz    = 0.90;
 let sessionStart  = null, ambientType  = 'off';
-
+ 
 // ══════════════════════════════════════════════
 // AUDIO — BINAURAL
 // ══════════════════════════════════════════════
 let audioCtx = null, leftOsc = null, rightOsc = null, gainNode = null;
 let ambNodes = [], ambGain = null;
-
+ 
 function initAudio() {
   if (audioCtx) audioCtx.close();
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -494,14 +495,14 @@ function initAudio() {
   leftOsc.start(); rightOsc.start();
   if (ambientType !== 'off') startAmbient(ambientType);
 }
-
+ 
 function stopAudio() {
   [leftOsc,rightOsc].forEach(o=>{ if(o){try{o.stop()}catch(e){}} });
   leftOsc = rightOsc = null;
   stopAmbient();
   if (audioCtx) { audioCtx.close(); audioCtx = null; }
 }
-
+ 
 function setVolume(v) {
   document.getElementById('volVal').textContent = v + '%';
   if (gainNode) gainNode.gain.value = (v/100)*0.32;
@@ -510,7 +511,7 @@ function setCarrier(v) {
   document.getElementById('carrierVal').textContent = v + ' Hz';
   if (leftOsc && rightOsc) { leftOsc.frequency.value = +v; rightOsc.frequency.value = +v + currentFreq; }
 }
-
+ 
 // ══════════════════════════════════════════════
 // SONIDO AMBIENTAL (generado con Web Audio)
 // ══════════════════════════════════════════════
@@ -532,7 +533,7 @@ function createNoiseBuffer(ctx, type) {
   }
   return buf;
 }
-
+ 
 function startAmbient(type) {
   if (!audioCtx) return;
   stopAmbient();
@@ -541,7 +542,7 @@ function startAmbient(type) {
   ambGain.gain.value = vol * 0.45;
   ambGain.connect(audioCtx.destination);
   ambNodes = [];
-
+ 
   if (type === 'lluvia') {
     const src = audioCtx.createBufferSource();
     src.buffer = createNoiseBuffer(audioCtx,'white'); src.loop = true;
@@ -551,7 +552,7 @@ function startAmbient(type) {
     hp.type='highpass'; hp.frequency.value=1200;
     src.connect(hp); hp.connect(bp); bp.connect(ambGain);
     src.start(); ambNodes.push(src);
-
+ 
   } else if (type === 'oceano') {
     const src = audioCtx.createBufferSource();
     src.buffer = createNoiseBuffer(audioCtx,'pink'); src.loop = true;
@@ -565,7 +566,7 @@ function startAmbient(type) {
     lfo.connect(lfoGain); lfoGain.connect(waveGain.gain);
     src.connect(lp); lp.connect(waveGain); waveGain.connect(ambGain);
     src.start(); lfo.start(); ambNodes.push(src,lfo);
-
+ 
   } else if (type === 'noche') {
     // Grillos: osciladores AM a frecuencias altas
     const freqs  = [4100,4600,5000,4350,5300];
@@ -586,13 +587,13 @@ function startAmbient(type) {
     });
   }
 }
-
+ 
 function stopAmbient() {
   ambNodes.forEach(n=>{ try{n.stop()}catch(e){} });
   ambNodes=[];
   if (ambGain) { ambGain.disconnect(); ambGain=null; }
 }
-
+ 
 function selectAmb(type) {
   ambientType = type;
   document.querySelectorAll('.amb-btn').forEach(b=>{
@@ -607,12 +608,12 @@ function selectAmb(type) {
     if (type!=='off') startAmbient(type);
   }
 }
-
+ 
 function setAmbVol(v) {
   document.getElementById('ambVolVal').textContent = v + '%';
   if (ambGain) ambGain.gain.value = (v/100)*0.45;
 }
-
+ 
 // ══════════════════════════════════════════════
 // CANVAS
 // ══════════════════════════════════════════════
@@ -644,7 +645,7 @@ function sine(w,h,amp,freq,ph,off) {
   ctx.stroke();
 }
 drawWave();
-
+ 
 // ══════════════════════════════════════════════
 // TIMER
 // ══════════════════════════════════════════════
@@ -662,7 +663,7 @@ function setDuration(min) {
   document.getElementById('progressFill').style.width='0%';
   document.querySelectorAll('.dur-btn').forEach(b=>b.classList.toggle('active',+b.dataset.dur===min));
 }
-
+ 
 // ══════════════════════════════════════════════
 // VOZ
 // ══════════════════════════════════════════════
@@ -670,13 +671,13 @@ let voices=[];
 function loadVoices(){ voices=window.speechSynthesis.getVoices(); }
 loadVoices();
 if(window.speechSynthesis.onvoiceschanged!==undefined) window.speechSynthesis.onvoiceschanged=loadVoices;
-
+ 
 function bestVoice() {
   const pref=['es-MX','es-419','es-US','es-ES','es'];
   for(const lang of pref){ const v=voices.find(v=>v.lang===lang); if(v) return v; }
   return voices.find(v=>v.lang.startsWith('es'))||null;
 }
-
+ 
 function leerAfirmacion(texto, onEnd) {
   if (!vozActiva||!('speechSynthesis' in window)) { if(onEnd) onEnd(); return; }
   window.speechSynthesis.cancel();
@@ -690,7 +691,7 @@ function leerAfirmacion(texto, onEnd) {
   u.onerror = ()=>{ if(onEnd) onEnd(); };
   window.speechSynthesis.speak(u);
 }
-
+ 
 function setStatus(msg,hablando,esperando) {
   document.getElementById('statusText').textContent=msg;
   const d=document.getElementById('statusDot');
@@ -701,12 +702,12 @@ function setIntervalo(s){ intervaloSeg=s; document.querySelectorAll('.int-btn').
 function setVelocidad(v){ velocidadVoz=+v; document.getElementById('velVal').textContent=(+v).toFixed(2)+'x'; }
 function setPitch(v){ pitchVoz=+v; document.getElementById('pitchVal').textContent=(+v).toFixed(2); }
 function leerAhoraBtn(){ leerAfirmacion(getAffSet()[currentAffIdx].texto); }
-
+ 
 // ══════════════════════════════════════════════
 // PLAY / STOP
 // ══════════════════════════════════════════════
 function togglePlay(){ isPlaying?stopSession():startSession(); }
-
+ 
 function startSession() {
   isPlaying=true; sessionStart=new Date();
   document.getElementById('playBtn').textContent='■';
@@ -714,7 +715,7 @@ function startSession() {
   if(timeLeft===0){ timeLeft=totalTime; document.getElementById('progressFill').style.width='0%'; }
   initAudio();
   timerInterval=setInterval(updateTimer,1000);
-
+ 
   // Mostrar cuenta regresiva de 20s antes de la primera afirmación
   let cuenta=20;
   const countEl=document.getElementById('introCountdown');
@@ -731,7 +732,7 @@ function startSession() {
   },1000);
   introTimeout=cuentaInv;
 }
-
+ 
 function iniciarCiclo() {
   clearInterval(affInterval);
   affInterval=setInterval(()=>{
@@ -740,7 +741,7 @@ function iniciarCiclo() {
   }, intervaloSeg*1000);
 }
 function reiniciarCiclo(){ clearInterval(affInterval); if(isPlaying) iniciarCiclo(); }
-
+ 
 function stopSession() {
   isPlaying=false;
   document.getElementById('playBtn').textContent='▶';
@@ -751,12 +752,23 @@ function stopSession() {
   stopAudio(); window.speechSynthesis.cancel();
   setStatus('Sesión detenida',false);
 }
-
+ 
 function finalizarSesion() {
   stopSession();
   mostrarModal();
+  // Registro automático al terminar sesión real
+  const sessionData = {
+    eje:      AXIS_LABELS[currentAxis],
+    frecuencia: FREQ_LABELS[currentFreq],
+    estado:   STATE_LABELS[currentState],
+    sonido:   ambientType === 'off' ? 'Ninguno' : ambientType.charAt(0).toUpperCase() + ambientType.slice(1),
+    duracion: currentDur,
+    fecha:    new Date().toISOString().split('T')[0],
+    observaciones: ''
+  };
+  registrarMeditacionEnNotion(sessionData).catch(()=>{});
 }
-
+ 
 // ══════════════════════════════════════════════
 // SELECTORS
 // ══════════════════════════════════════════════
@@ -767,7 +779,7 @@ function selectFreq(hz) {
 }
 function selectAxis(a){ currentAxis=a; document.querySelectorAll('.axis-btn').forEach(b=>b.classList.toggle('active',b.dataset.axis===a)); currentAffIdx=0; renderAffirmation(); }
 function selectState(s){ currentState=s; document.querySelectorAll('.state-btn').forEach(b=>b.classList.toggle('active',b.dataset.state===s)); currentAffIdx=0; renderAffirmation(); }
-
+ 
 // ══════════════════════════════════════════════
 // AFIRMACIONES
 // ══════════════════════════════════════════════
@@ -869,7 +881,7 @@ const AFF={
     ansiedad:[{tipo:"Identidad",texto:"Soy un constructor de sistemas financieros. Mi identidad no depende del saldo actual. Depende de mi proceso."},{tipo:"Acción",texto:"La ansiedad quiere resultados rápidos. Mi sistema me pide proceso consistente. Elijo el proceso."},{tipo:"Resultado",texto:"Mi estabilidad financiera se construye con disciplina, no con velocidad. El tiempo está de mi lado."},{tipo:"Integración",texto:"Tengo tres ejes activos generando valor. No estoy solo ante las finanzas. Tengo sistema, habilidades y dirección."},{tipo:"Abundancia",texto:"Tengo suficiente hoy para construir más mañana. La ansiedad miente. El proceso dice la verdad."},{tipo:"Disciplina",texto:"No tomo decisiones financieras desde la ansiedad. Espero la calma, luego ejecuto el sistema. Siempre."},{tipo:"Pineal",texto:"Más allá del miedo financiero hay una certeza profunda. El proceso que sigo funciona. Confío en esa certeza."}]
   }
 };
-
+ 
 function getAffSet(){ const ax=AFF[currentAxis]||AFF.trading; return ax[currentState]||ax.claridad; }
 function renderAffirmation() {
   const set=getAffSet(), aff=set[currentAffIdx];
@@ -888,7 +900,7 @@ function renderAffirmation() {
 }
 function nextAff(leer){ const set=getAffSet(); currentAffIdx=(currentAffIdx+1)%set.length; renderAffirmation(); if(leer&&vozActiva) leerAfirmacion(set[currentAffIdx].texto); }
 function prevAff(){ const set=getAffSet(); currentAffIdx=(currentAffIdx-1+set.length)%set.length; renderAffirmation(); }
-
+ 
 // ══════════════════════════════════════════════
 // NOTION
 // ══════════════════════════════════════════════
@@ -897,19 +909,19 @@ function toggleNotion() {
   const chev=document.getElementById('notionChevron');
   body.classList.toggle('open'); chev.classList.toggle('open');
 }
-
+ 
 function saveNotionConfig() {
   localStorage.setItem('saidos_notion_token', document.getElementById('notionToken').value);
   localStorage.setItem('saidos_notion_db',    document.getElementById('notionDb').value);
 }
-
+ 
 function loadNotionConfig() {
   const t=localStorage.getItem('saidos_notion_token');
   const d=localStorage.getItem('saidos_notion_db');
   if(t) document.getElementById('notionToken').value=t;
   if(d) document.getElementById('notionDb').value=d;
 }
-
+ 
 async function testNotion() {
   const token=document.getElementById('notionToken').value.trim();
   const dbId=document.getElementById('notionDb').value.trim().replace(/-/g,'');
@@ -927,14 +939,14 @@ async function testNotion() {
     res.textContent='✗ CORS bloqueado desde archivo local. Usa el botón "Copiar" al final de la sesión y dímelo en el chat para registrarlo.';
   }
 }
-
+ 
 // ══════════════════════════════════════════════
 // MODAL FIN DE SESIÓN
 // ══════════════════════════════════════════════
 const AXIS_LABELS  = {trading:'Trading',tripletin:'TripleTen Data',estabilidad:'Estabilidad Financiera'};
 const STATE_LABELS = {claridad:'Claridad mental',momentum:'Momentum',dudas:'Dudas',energia_baja:'Baja energía',distraccion:'Distracción',ansiedad:'Ansiedad financiera'};
 const FREQ_LABELS  = {40:'Gamma 40 Hz',14:'Beta 14 Hz',10:'Alfa 10 Hz',6:'Theta 6 Hz'};
-
+ 
 function mostrarModal() {
   const now=new Date();
   const fechaStr=now.toLocaleDateString('es-MX',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
@@ -951,22 +963,85 @@ function mostrarModal() {
   document.getElementById('notionLogResult').className='notion-result';
   document.getElementById('sessionModal').classList.add('visible');
 }
-
+ 
 function cerrarModal() { document.getElementById('sessionModal').classList.remove('visible'); }
-
+ 
+// ══════════════════════════════════════════════
+// WORKER — Llamada al proxy Cloudflare (resuelve CORS)
+// ══════════════════════════════════════════════
+const WORKER_URL = 'https://winter-fire-6a0d.conceviklan.workers.dev/';
+ 
+async function registrarMeditacionEnNotion(sessionData) {
+  const response = await fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      eje:          sessionData.eje,
+      frecuencia:   sessionData.frecuencia,
+      estado:       sessionData.estado,
+      sonido:       sessionData.sonido,
+      duracion:     sessionData.duracion,
+      fecha:        sessionData.fecha,
+      observaciones:sessionData.observaciones || ''
+    })
+  });
+  const result = await response.text();
+  console.log('Respuesta del Worker:', result);
+  return result;
+}
+ 
+async function probarRegistro() {
+  try {
+    const resultado = await registrarMeditacionEnNotion({
+      eje: 'Trading', frecuencia: 'Alfa 10 Hz', estado: 'Claridad mental',
+      sonido: 'Ninguno', duracion: 10, fecha: new Date().toISOString().split('T')[0],
+      observaciones: 'Prueba de conexión desde el HTML'
+    });
+    alert('✓ Registro enviado: ' + resultado);
+  } catch (error) {
+    alert('✗ Error: ' + error.message);
+    console.error(error);
+  }
+}
+ 
 async function registrarEnNotion() {
+  const obs = document.getElementById('modalObs').value.trim();
+  const res = document.getElementById('notionLogResult');
+  const btn = document.getElementById('btnNotion');
+  btn.disabled = true; btn.textContent = 'Registrando…';
+  const sessionData = {
+    eje:      AXIS_LABELS[currentAxis],
+    frecuencia: FREQ_LABELS[currentFreq],
+    estado:   STATE_LABELS[currentState],
+    sonido:   ambientType === 'off' ? 'Ninguno' : ambientType.charAt(0).toUpperCase() + ambientType.slice(1),
+    duracion: currentDur,
+    fecha:    new Date().toISOString().split('T')[0],
+    observaciones: obs
+  };
+  try {
+    await registrarMeditacionEnNotion(sessionData);
+    res.className = 'notion-result ok'; res.textContent = '✓ Sesión registrada en Notion';
+    btn.textContent = '✓ Registrado';
+  } catch(e) {
+    res.className = 'notion-result err'; res.textContent = '✗ Error: ' + e.message;
+    btn.disabled = false; btn.textContent = '⬜ Reintentar';
+  }
+}
+ 
+// LEGACY — mantiene token/db por si se necesita después
+async function _registrarEnNotionLegacy() {
   const token=localStorage.getItem('saidos_notion_token')||'';
   const dbId=(localStorage.getItem('saidos_notion_db')||'').replace(/-/g,'');
   const obs=document.getElementById('modalObs').value.trim();
   const res=document.getElementById('notionLogResult');
   const btn=document.getElementById('btnNotion');
-
+ 
   if(!token||!dbId){
     res.className='notion-result err';
     res.textContent='⚠ Configura el token y DB de Notion primero (panel de configuración)';
     return;
   }
-
+ 
   btn.disabled=true; btn.textContent='Registrando…';
   const now=new Date();
   const body={
@@ -981,7 +1056,7 @@ async function registrarEnNotion() {
       'Observaciones':{rich_text:[{text:{content:obs||'—'}}]}
     }
   };
-
+ 
   try {
     const r=await fetch('https://api.notion.com/v1/pages',{
       method:'POST',
@@ -1002,7 +1077,7 @@ async function registrarEnNotion() {
     btn.disabled=false; btn.textContent='⬜ Reintentar';
   }
 }
-
+ 
 function copiarSesion() {
   const obs=document.getElementById('modalObs').value.trim();
   const now=new Date();
@@ -1018,7 +1093,7 @@ Observaciones: ${obs||'—'}`;
     const btn=event.target; btn.textContent='✓ Copiado'; setTimeout(()=>btn.textContent='📋 Copiar datos al portapapeles',2000);
   }).catch(()=>{ alert(txt); });
 }
-
+ 
 // ══════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════
