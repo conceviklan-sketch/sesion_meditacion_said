@@ -175,36 +175,6 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
 .aff-nav-btn { background:var(--surface); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:14px; padding:5px 13px; cursor:pointer; font-family:inherit; transition:all .15s; }
 .aff-nav-btn:hover { border-color:var(--accent); }
  
-/* NOTION CONFIG */
-.notion-panel { background:var(--card); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-bottom:16px; }
-.notion-header {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 16px; cursor:pointer; user-select:none;
-}
-.notion-header:hover { background:rgba(255,255,255,.03); }
-.notion-title { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:8px; }
-.notion-chevron { color:var(--muted); transition:transform .3s; font-size:12px; }
-.notion-chevron.open { transform:rotate(180deg); }
-.notion-body { padding:0 16px; max-height:0; overflow:hidden; transition:max-height .4s ease, padding .3s; }
-.notion-body.open { max-height:600px; padding:0 16px 16px; }
-.notion-input-group { display:flex; flex-direction:column; gap:5px; margin-bottom:12px; }
-.notion-input-group label { font-size:10px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
-.notion-input {
-  background:var(--surface); border:1px solid var(--border); border-radius:8px;
-  padding:9px 12px; color:var(--text); font-family:inherit; font-size:12px; outline:none; width:100%;
-  transition:border-color .2s;
-}
-.notion-input:focus { border-color:var(--accent); }
-.notion-input::placeholder { color:var(--muted); opacity:.6; }
-.notion-save-btn {
-  width:100%; background:rgba(124,77,255,.15); border:1px solid var(--accent);
-  border-radius:10px; color:#c4b5fd; font-size:12px; padding:10px;
-  cursor:pointer; font-family:inherit; transition:all .15s; font-weight:600;
-}
-.notion-save-btn:hover { background:rgba(124,77,255,.25); }
-.notion-help { font-size:11px; color:var(--muted); line-height:1.6; margin-top:10px; padding:10px; background:rgba(255,255,255,.03); border-radius:8px; }
-.notion-help a { color:var(--accent2); text-decoration:none; }
- 
 /* MODAL FIN DE SESIÓN */
 .modal-overlay {
   position:fixed; inset:0; background:rgba(0,0,0,.85);
@@ -407,36 +377,6 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; h
   <div class="aff-nav">
     <button class="aff-nav-btn" onclick="prevAff()">‹</button>
     <button class="aff-nav-btn" onclick="nextAff()">›</button>
-  </div>
-</div>
- 
-<!-- NOTION CONFIG -->
-<div class="notion-panel">
-  <div class="notion-header" onclick="toggleNotion()">
-    <div class="notion-title">⬜ Configuración Notion</div>
-    <div class="notion-chevron" id="notionChevron">▼</div>
-  </div>
-  <div class="notion-body" id="notionBody">
-    <div class="notion-input-group">
-      <label>Token de Integración (empieza con secret_...)</label>
-      <input class="notion-input" id="notionToken" type="password" placeholder="secret_xxxxxxxxxxxxxxxx" oninput="saveNotionConfig()">
-    </div>
-    <div class="notion-input-group">
-      <label>ID de la Base de Datos de Notion</label>
-      <input class="notion-input" id="notionDb" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" oninput="saveNotionConfig()">
-    </div>
-    <button class="notion-save-btn" onclick="probarRegistro()" style="margin-bottom:8px">🧪 Probar registro en Notion</button>
-    <button class="notion-save-btn" onclick="testNotion()" style="background:rgba(124,77,255,0.08);color:var(--muted);border-color:var(--border)">🔗 Probar conexión (legacy)</button>
-    <div id="notionTestResult" class="notion-result"></div>
-    <div class="notion-help">
-      <strong style="color:var(--text)">Cómo configurarlo:</strong><br>
-      1. Ve a <a href="https://www.notion.so/my-integrations" target="_blank">notion.so/my-integrations</a><br>
-      2. Crea una integración → copia el <em>Internal Integration Token</em><br>
-      3. En tu base de datos de Notion: ⋯ → Conexiones → agrega tu integración<br>
-      4. Copia el ID de la URL de la base de datos (los 32 caracteres después del último /)<br><br>
-      <strong style="color:var(--text)">Propiedades requeridas en la DB:</strong><br>
-      <code style="color:#69f0ae">Nombre</code> (title) · <code style="color:#69f0ae">Eje</code> (select) · <code style="color:#69f0ae">Frecuencia</code> (select) · <code style="color:#69f0ae">Estado</code> (select) · <code style="color:#69f0ae">Duración</code> (number) · <code style="color:#69f0ae">Fecha</code> (date) · <code style="color:#69f0ae">Observaciones</code> (text)
-    </div>
   </div>
 </div>
  
@@ -902,45 +842,6 @@ function nextAff(leer){ const set=getAffSet(); currentAffIdx=(currentAffIdx+1)%s
 function prevAff(){ const set=getAffSet(); currentAffIdx=(currentAffIdx-1+set.length)%set.length; renderAffirmation(); }
  
 // ══════════════════════════════════════════════
-// NOTION
-// ══════════════════════════════════════════════
-function toggleNotion() {
-  const body=document.getElementById('notionBody');
-  const chev=document.getElementById('notionChevron');
-  body.classList.toggle('open'); chev.classList.toggle('open');
-}
- 
-function saveNotionConfig() {
-  localStorage.setItem('saidos_notion_token', document.getElementById('notionToken').value);
-  localStorage.setItem('saidos_notion_db',    document.getElementById('notionDb').value);
-}
- 
-function loadNotionConfig() {
-  const t=localStorage.getItem('saidos_notion_token');
-  const d=localStorage.getItem('saidos_notion_db');
-  if(t) document.getElementById('notionToken').value=t;
-  if(d) document.getElementById('notionDb').value=d;
-}
- 
-async function testNotion() {
-  const token=document.getElementById('notionToken').value.trim();
-  const dbId=document.getElementById('notionDb').value.trim().replace(/-/g,'');
-  const res=document.getElementById('notionTestResult');
-  if(!token||!dbId){ res.className='notion-result err'; res.textContent='⚠ Ingresa token y ID de base de datos'; return; }
-  res.className='notion-result'; res.style.display='block'; res.textContent='Probando…';
-  try {
-    const r=await fetch(`https://api.notion.com/v1/databases/${dbId}`,{
-      headers:{'Authorization':'Bearer '+token,'Notion-Version':'2022-06-28'}
-    });
-    if(r.ok){ res.className='notion-result ok'; res.textContent='✓ Conexión exitosa. Base de datos encontrada.'; }
-    else { const e=await r.json(); res.className='notion-result err'; res.textContent='✗ Error '+r.status+': '+(e.message||''); }
-  } catch(e) {
-    res.className='notion-result err';
-    res.textContent='✗ CORS bloqueado desde archivo local. Usa el botón "Copiar" al final de la sesión y dímelo en el chat para registrarlo.';
-  }
-}
- 
-// ══════════════════════════════════════════════
 // MODAL FIN DE SESIÓN
 // ══════════════════════════════════════════════
 const AXIS_LABELS  = {trading:'Trading',tripletin:'TripleTen Data',estabilidad:'Estabilidad Financiera'};
@@ -1028,56 +929,6 @@ async function registrarEnNotion() {
   }
 }
  
-// LEGACY — mantiene token/db por si se necesita después
-async function _registrarEnNotionLegacy() {
-  const token=localStorage.getItem('saidos_notion_token')||'';
-  const dbId=(localStorage.getItem('saidos_notion_db')||'').replace(/-/g,'');
-  const obs=document.getElementById('modalObs').value.trim();
-  const res=document.getElementById('notionLogResult');
-  const btn=document.getElementById('btnNotion');
- 
-  if(!token||!dbId){
-    res.className='notion-result err';
-    res.textContent='⚠ Configura el token y DB de Notion primero (panel de configuración)';
-    return;
-  }
- 
-  btn.disabled=true; btn.textContent='Registrando…';
-  const now=new Date();
-  const body={
-    parent:{database_id:dbId},
-    properties:{
-      'Nombre':     {title:[{text:{content:`Sesión ${now.toLocaleDateString('es-MX')} — ${AXIS_LABELS[currentAxis]}`}}]},
-      'Eje':        {select:{name:AXIS_LABELS[currentAxis]}},
-      'Frecuencia': {select:{name:FREQ_LABELS[currentFreq]}},
-      'Estado':     {select:{name:STATE_LABELS[currentState]}},
-      'Duración':   {number:currentDur},
-      'Fecha':      {date:{start:now.toISOString().split('T')[0]}},
-      'Observaciones':{rich_text:[{text:{content:obs||'—'}}]}
-    }
-  };
- 
-  try {
-    const r=await fetch('https://api.notion.com/v1/pages',{
-      method:'POST',
-      headers:{'Authorization':'Bearer '+token,'Notion-Version':'2022-06-28','Content-Type':'application/json'},
-      body:JSON.stringify(body)
-    });
-    if(r.ok){
-      res.className='notion-result ok';
-      res.textContent='✓ Sesión registrada en Notion exitosamente';
-      btn.textContent='✓ Registrado';
-    } else {
-      const e=await r.json();
-      throw new Error(e.message||'Error '+r.status);
-    }
-  } catch(e) {
-    res.className='notion-result err';
-    res.textContent='✗ No se pudo conectar directamente. Copia los datos y tráelos al chat para que los registre.';
-    btn.disabled=false; btn.textContent='⬜ Reintentar';
-  }
-}
- 
 function copiarSesion() {
   const obs=document.getElementById('modalObs').value.trim();
   const now=new Date();
@@ -1101,10 +952,10 @@ Observaciones: ${obs||'—'}`;
   const now=new Date();
   const str=now.toLocaleDateString('es-MX',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   document.getElementById('dateDisplay').textContent=str.charAt(0).toUpperCase()+str.slice(1);
-  loadNotionConfig();
   renderAffirmation();
   setStatus('Listo — selecciona estado y presiona Play',false);
 })();
 </script>
 </body>
 </html>
+ 
